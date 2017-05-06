@@ -1,0 +1,5 @@
+{
+    "require": {
+        "tomk79/diffdir": "dev-develop"
+    }
+}

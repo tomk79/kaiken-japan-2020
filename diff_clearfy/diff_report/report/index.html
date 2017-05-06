@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>diffdir</title>
+		<link rel="stylesheet" href="./resources/fess-1.2.2.css" />
+		<script src="./resources/jquery-1.10.1.min.js"></script>
+		<link rel="stylesheet" href="./resources/bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" href="./resources/bootstrap/css/bootstrap-theme.css" />
+		<script src="./resources/bootstrap/js/bootstrap.js"></script>
+		<link rel="stylesheet" href="./resources/common.css" />
+		<script src="./resources/common.js"></script>
+		<script>
+			(function(){
+				function refresh(){
+					var outline = document.getElementById('outline');
+					var diffpreview = document.getElementById('diffpreview');
+					var iframe = document.getElementById('iframe');
+					var difflist = document.getElementById('difflist');
+
+					outline.style.height = window.innerHeight+'px';
+					iframe.height = window.innerHeight;
+				}
+				window.onload = refresh;
+				window.onresize = refresh;
+			})();
+		</script>
+	</head>
+	<body>
+		<div id="outline">
+			<div id="diffpreview">
+				<iframe src="about:blank" name="diffpreview" id="iframe" border="0" frameborder="0"></iframe>
+			</div>
+			<div id="difflist">
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-default" onclick="showAllList();">すべて表示</button>
+					<button type="button" class="btn btn-default" onclick="filterList('>li:not(.changed,.added,.deleted)');">差分のみ</button>
+					<button type="button" class="btn btn-default" onclick="filterList('>li:not(.file)');">ファイルのみ</button>
+				</div>
+				<ul><li class="changed file file"><a href="diff/日本国憲法_00_前文.md.diff.html" target="diffpreview">日本国憲法_00_前文.md</a></li><li class="changed file file"><a href="diff/日本国憲法_01_天皇.md.diff.html" target="diffpreview">日本国憲法_01_天皇.md</a></li><li class="deleted file "><a href="diff/日本国憲法_02_戦争の放棄.md.diff.html" target="diffpreview">日本国憲法_02_戦争の放棄.md</a></li><li class="changed file file"><a href="diff/日本国憲法_03_国民の権利及び義務.md.diff.html" target="diffpreview">日本国憲法_03_国民の権利及び義務.md</a></li><li class="changed file file"><a href="diff/日本国憲法_04_国会.md.diff.html" target="diffpreview">日本国憲法_04_国会.md</a></li><li class="changed file file"><a href="diff/日本国憲法_05_内閣.md.diff.html" target="diffpreview">日本国憲法_05_内閣.md</a></li><li class="changed file file"><a href="diff/日本国憲法_06_司法.md.diff.html" target="diffpreview">日本国憲法_06_司法.md</a></li><li class="changed file file"><a href="diff/日本国憲法_07_財政.md.diff.html" target="diffpreview">日本国憲法_07_財政.md</a></li><li class="changed file file"><a href="diff/日本国憲法_08_地方自治.md.diff.html" target="diffpreview">日本国憲法_08_地方自治.md</a></li><li class="deleted file "><a href="diff/日本国憲法_09_改正.md.diff.html" target="diffpreview">日本国憲法_09_改正.md</a></li><li class="deleted file "><a href="diff/日本国憲法_10_最高法規.md.diff.html" target="diffpreview">日本国憲法_10_最高法規.md</a></li><li class="deleted file "><a href="diff/日本国憲法_11_補則.md.diff.html" target="diffpreview">日本国憲法_11_補則.md</a></li><li class="added  file"><a href="diff/日本国憲法_02_安全保障.md.diff.html" target="diffpreview">日本国憲法_02_安全保障.md</a></li><li class="added  file"><a href="diff/日本国憲法_09_緊急事態.md.diff.html" target="diffpreview">日本国憲法_09_緊急事態.md</a></li><li class="added  file"><a href="diff/日本国憲法_10_改正.md.diff.html" target="diffpreview">日本国憲法_10_改正.md</a></li><li class="added  file"><a href="diff/日本国憲法_11_最高法規.md.diff.html" target="diffpreview">日本国憲法_11_最高法規.md</a></li><li class="added  file"><a href="diff/日本国憲法_99_附則.md.diff.html" target="diffpreview">日本国憲法_99_附則.md</a></li></ul>
+			</div>
+		</div>
+	</body>
+</html>
