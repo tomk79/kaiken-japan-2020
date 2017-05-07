@@ -1,155 +1,189 @@
-html, body{
-	margin:0;padding:0;
-	background-color:#fff;
-	color:#333;
-}
-ins{
-	color:#000;
-	background-color:#dfd;
-	text-decoration:none;
-}
-del{
-	color:#f00;
-	background-color:#fdd;
-	text-decoration:none;
-}
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333; }
 
-.code pre{
-	background-color: #f9f9f9;
-}
+ins {
+  color: #060;
+  background-color: #dfd;
+  text-decoration: none; }
 
-#outline{
-	width:auto;
-	max-height:100%;
-	overflow: hidden;
-}
-#diffpreview{
-	float:right;
-	width:73%;
-	max-height:100%;
-}
-#diffpreview iframe{
-	width:100%;
-}
-#difflist{
-	float:left;
-	overflow:auto;
-	width:25%;
-	max-height:100%;
-}
-#difflist ul{
-	display:table;
-	width:100%;
-	padding: 10px;
-	margin: 0;
-}
-#difflist li{
-	display:table-row;
-	margin-top:1px;
-	margin-bottom:1px;
-	list-style-type:none;
-	white-space: nowrap;
-}
-#difflist li.dir{
-	background-color:#f5f5f5;
-	font-weight:bold;
-}
-#difflist li a{
-	color:#000;
-	text-decoration:none;
-}
-#difflist li.changed a{
-	background-color:#dfd;
-}
-#difflist li.changed a:after{
-	content:"[C]";
-	margin-left:0.5em;
-}
-#difflist li.added a{
-	background-color:#dfd;
-}
-#difflist li.added a:after{
-	content:"[A]";
-	color:#f90;
-	margin-left:0.5em;
-}
-#difflist li.deleted a{
-	color:#f00;
-	background-color:#fdd;
-}
-#difflist li.deleted a:after{
-	content:"[D]";
-	margin-left:0.5em;
-}
-.theme_outline{
-	margin:1em 1em;
-}
+del {
+  color: #f00;
+  background-color: #fdd;
+  text-decoration: none; }
 
-.image-preview{
-}
-.image-preview img{
-	max-width:100%;
-}
-.image-preview--twocolumns{
-	margin:1em 0;
-	text-align:center;
-	position: relative;
-	display: block;
-	float: none;
-	clear: both;
-}
-.image-preview--twocolumns:after {
-	content: " ";
-	display: block;
-	visibility: hidden;
-	height: 0.1px;
-	font-size: 0.1em;
-	line-height: 0;
-	clear: both;
-}
-.image-preview--twocolumns .image-preview--before{
-	max-width:49%;
-	float:left;
-}
-.image-preview--twocolumns .image-preview--after{
-	width:49%;
-	float:right;
-}
-.image-preview--pilingup{
-	display:none;
-	margin:1em 0;
-	position: relative;
-	text-align:center;
-	min-height:400px;
-}
+.code pre {
+  background-color: #f9f9f9; }
 
-/* php-diff */
-.Differences{
-	width: 100%;
-}
-.Differences * {
-	vertical-align: top;
-}
-.Differences thead th,
-.Differences thead td {
-	white-space: nowrap;
-	text-align: center;
-}
-.Differences tbody th,
-.Differences tbody td {
-	border-top: 1px dotted #bbb;
-}
-.Differences tbody td{
-	width: 50%;
-	padding: 2px 0.5em;
-}
-.Differences tbody th{
-	white-space: nowrap;
-	padding: 2px 0.5em;
-	background-color:#f0f0f0;
-	border-radius: 3px;
-	text-align: center;
-}
-.Differences tbody.ChangeReplace th{
-	background-color:#ddd;
-}
+.diff-main-view {
+  min-height: 300px;
+  margin: 20px auto;
+  padding: 0 0 10px 0;
+  border-bottom: 5px solid #aaa; }
+
+.outline {
+  width: auto;
+  max-height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .outline .diffpreview {
+    width: 75%;
+    max-height: 100%; }
+    .outline .diffpreview iframe {
+      width: 100%; }
+  .outline .difflist {
+    overflow: auto;
+    width: 25%;
+    max-height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .outline .difflist .difflist__list {
+      overflow: auto; }
+    .outline .difflist ul {
+      display: table;
+      width: 100%;
+      padding: 10px;
+      margin: 0; }
+      .outline .difflist ul li {
+        display: table-row;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        list-style-type: none;
+        white-space: nowrap; }
+      .outline .difflist ul li.dir {
+        background-color: #f5f5f5;
+        font-weight: bold; }
+      .outline .difflist ul li a {
+        color: #000;
+        text-decoration: none; }
+        .outline .difflist ul li a .label {
+          margin-left: 1em;
+          font-size: 75%;
+          padding: 2px 5px; }
+      .outline .difflist ul li.changed a {
+        background-color: #dfd; }
+      .outline .difflist ul li.added a {
+        background-color: #dfd; }
+      .outline .difflist ul li.deleted a {
+        color: #f00;
+        background-color: #fdd; }
+
+.theme_outline {
+  margin: 1em 1em; }
+
+.image-preview img {
+  max-width: 100%; }
+
+.image-preview .image-preview__two-columns {
+  margin: 1em 0;
+  text-align: center;
+  position: relative;
+  display: block;
+  float: none;
+  clear: both; }
+
+.image-preview .image-preview__two-columns:after {
+  content: " ";
+  display: block;
+  visibility: hidden;
+  height: 0.1px;
+  font-size: 0.1em;
+  line-height: 0;
+  clear: both; }
+
+.image-preview .image-preview__two-columns .image-preview--before {
+  max-width: 49%;
+  float: left; }
+
+.image-preview .image-preview__two-columns .image-preview--after {
+  width: 49%;
+  float: right; }
+
+.image-preview .image-preview__piling-up {
+  display: none;
+  margin: 1em 0;
+  position: relative;
+  text-align: center;
+  min-height: 400px; }
+
+.text-preview {
+  margin-bottom: 12px; }
+  .text-preview__btns {
+    margin-top: 12px;
+    margin-bottom: 12px; }
+  .text-preview .Differences {
+    width: 100%; }
+  .text-preview .Differences * {
+    vertical-align: top; }
+  .text-preview .Differences thead th,
+  .text-preview .Differences thead td {
+    white-space: nowrap;
+    text-align: center; }
+  .text-preview .Differences tbody th,
+  .text-preview .Differences tbody td {
+    border-top: 1px dotted #bbb; }
+  .text-preview .Differences tbody td {
+    width: 50%;
+    padding: 2px 0.5em; }
+  .text-preview .Differences tbody th {
+    white-space: nowrap;
+    padding: 2px 0.5em;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    text-align: right;
+    font-weight: normal; }
+  .text-preview .Differences tbody.ChangeReplace th {
+    background-color: #ddd; }
+  .text-preview .textdiff {
+    white-space: pre-wrap;
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    margin: 10px 0; }
+    .text-preview .textdiff__row {
+      border-bottom: 1px dotted #bbb;
+      min-height: 1em;
+      padding: 3px 0;
+      color: #999; }
+    .text-preview .textdiff__row:last-child {
+      border-bottom: 0px none; }
+    .text-preview .textdiff__row--changed {
+      background-color: #fefefe;
+      color: #000; }
+    .text-preview .textdiff--two-columns {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .text-preview .textdiff--two-columns > div {
+        width: 50%; }
+    .text-preview .textdiff th {
+      text-align: right;
+      font-weight: normal;
+      vertical-align: top;
+      padding: 3px 5px;
+      white-space: nowrap;
+      border-left: 3px solid #bbb;
+      border-right: 1px double #bbb; }
+      .text-preview .textdiff th:first-child {
+        border-left: 0px none; }
+    .text-preview .textdiff__row--changed th {
+      background-color: #fefefe;
+      color: #000; }
+    .text-preview .textdiff td {
+      width: 50%;
+      vertical-align: top;
+      padding: 3px 5px; }
+    .text-preview .textdiff__row--changed td {
+      background-color: #fefefe;
+      color: #000; }
