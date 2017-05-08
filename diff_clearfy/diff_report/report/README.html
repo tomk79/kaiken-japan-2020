@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>diffdir - README</title>
+		<meta name="apple-mobile-web-app-capable" content="no" /><meta name="format-detection" content="telephone=no" />
+		<meta name="viewport" content="width=1024" />
+		<script src="./resources/jquery-1.10.1.min.js"></script>
+		<link rel="stylesheet" href="./resources/bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" href="./resources/bootstrap/css/bootstrap-theme.css" />
+		<script src="./resources/bootstrap/js/bootstrap.js"></script>
+		<link rel="stylesheet" href="./resources/common.css" />
+		<script src="./resources/common.js"></script>
+	</head>
+	<body>
+<div class="container">
+<h1>日本国憲法 改正案 を diff するプロジェクト</h1>
+
+<p>2020年施行を目指す日本国憲法改正案の内容を、現行昭和憲法からの差分で読んでみるプロジェクト。</p>
+
+<h2>このプロジェクトは何？</h2>
+
+<p>2020年施行を目指すと宣言された日本国憲法改正案の内容を把握するため、 現行憲法と改正案を Markdownテキスト化し、diff してみるものです。</p>
+
+<p>改正案の変更点をわかりやすく可視化し、議論に参加する際の手助けにして頂きたい思いで作成しました。</p>
+
+<p>憲法の改正は、日本の国のあり方を大きく変える手続きだと理解しています。 最大限に多くの方々が、誤った選択をしてしまわないよう、改正案の全文をよく読み、十分な理解と健全な議論を経て、納得のいく結論を持った上で、国民投票に臨めるよう願っています。</p>
+
+<h2>経緯</h2>
+
+<h3>トライ 1 - Pull Request で差分を見る</h3>
+
+<p>ひとまず、 双方の Markdown ファイルを作成して <a href="https://github.com/tomk79/kaiken-japan-2020/pull/1/files">Pull Request を作成</a> し、 その差分を表示してみました。</p>
+
+<p>しかし、これは意図したほどうまく行きませんでした。 改正案の変更は憲法の全域にわたっており、ノイズも多く要点がつかみにくくなってしまいました。</p>
+
+<h3>トライ 2 - diff した内容をHTMLドキュメント化</h3>
+
+<p>そこで、書式を合わせたり、重要ではないと思われる表現の違いを改正案に合わせるなどの加工を施し、 diff した結果をHTMLドキュメントにしてみました。</p>
+
+<p>それが<a href="https://tomk79.github.io/kaiken-japan-2020/diff_clearfy/diff_report/report/index.html">こちら</a>です。</p>
+
+<p>ノイズ除去のため、下記の加工を施した上で比較しています。</p>
+
+<ul>
+<li>改行規則統一</li>
+<li>対応するファイル名を統一</li>
+<li>(素人判断にて)重要ではないと思われる言葉の置換処理
+
+<ul>
+<li>すべて → 全て</li>
+<li>〜であつて → 〜であって</li>
+<li>行ふ → 行う</li>
+<li>問はれない → 問われない</li>
+<li>但し → ただし</li>
+<li>各〃 → 各々</li>
+<li>〜によつて -> 〜によって</li>
+<li>行つた -> 行った</li>
+<li>いづれかの -> いずれかの</li>
+<li>失はせる -> 失わせる</li>
+<li>且つ -> かつ</li>
+<li>定のある -> 定めのある</li>
+<li>異なつた -> 異なった</li>
+<li>取つた -> 取った</li>
+<li>みだした -> 乱した</li>
+<li>行ひ -> 行い</li>
+<li>負ふ -> 負う</li>
+<li>あつた -> あった</li>
+<li>従ひ -> 従い</li>
+<li>従は -> 従わ</li>
+<li>基いて -> 基づいて</li>
+<li>基く -> 基づく</li>
+<li>少く -> 少なく</li>
+<li>ひとしく -> 等しく</li>
+<li>するやうに -> するように</li>
+<li>用ひる -> 用いる</li>
+<li>奪はれ -> 奪われ</li>
+<li>ゐ -> い</li>
+<li>なつて -> なって</li>
+<li>与へ -> 与え</li>
+<li>附する -> 付する</li>
+<li>さきに -> 先に</li>
+</ul></li>
+</ul>
+
+<p><a href="https://tomk79.github.io/kaiken-japan-2020/diff_clearfy/diff_report/report/index.html">比較結果のHTML文書</a>作成には、 <a href="https://packagist.org/packages/tomk79/diffdir">tomk79/diffdir</a> を使用しました。</p>
+
+<h2>免責や注意など</h2>
+
+<p>使用しているライブラリの不具合等により、一部差分の表示漏れや誤った表示等がある可能性があります。また、タイプミス等があるかも知れません。</p>
+
+<p>このプロジェクト内にある文書はあくまで参考とし、 <em>原文を基本として、あわせて読むように</em> してください。</p>
+
+<p>また、ご意見や、誤り等を発見された場合の報告等は、 <a href="https://github.com/tomk79/kaiken-japan-2020/issues">Github Issue</a> からお知らせ頂けるとうれしいです。</p>
+
+<h2>原文</h2>
+
+<p>本プロジェクト内にある文書を過信せず、必ず原文をあわせて参照してください。</p>
+
+<h3>現行憲法(昭和憲法)</h3>
+
+<p>※改正前現行憲法(昭和憲法)の全文は <a href="http://www.jicl.jp/kenpou_all/kenpou.html">JICL 法学館憲法研究所 日本国憲法全文</a> より取得しました。</p>
+
+<h3>自民党改正案</h3>
+
+<p>※自民党改正案全文は <a href="https://jimin.ncss.nifty.com/pdf/news/policy/130250_1.pdf">日本国憲法改正草案(現行憲法対照) 自由民主党 平成24年4月27日(決定) (PDF)</a> より取得しました。</p>
+
+<h2>プロジェクトURL</h2>
+
+<ul>
+<li><a href="https://github.com/tomk79/kaiken-japan-2020">https://github.com/tomk79/kaiken-japan-2020</a></li>
+</ul>
+</div>
+<script>
+$(window).on('load', function(){
+	$('a').attr({
+		'target': '_top'
+	})
+})
+</script>
+	</body>
+</html>

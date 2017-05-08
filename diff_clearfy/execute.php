@@ -9,13 +9,17 @@ if( is_callable('mb_internal_encoding') ){
 
 require_once(__DIR__.'/../vendor/autoload.php');
 
+$fs = new tomk79\filesystem();
+$fs->rm(__DIR__.'/diff_report/');
+
 $diffdir = new tomk79\diffdir(
 	__DIR__.'/showa_kenpo/',
 	__DIR__.'/jimin_draft_20120427/',
 	array( // options
 		'output'=>__DIR__.'/diff_report/', // -o
+		'readme'=>__DIR__.'/../README.md', // --readme
 		'strip_crlf'=>true, // --strip-crlf
-		'verbose'=>true // -v
+		'verbose'=>true, // -v
 	)
 );
 if( $diffdir->is_error() ){
